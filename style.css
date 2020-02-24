@@ -1,0 +1,310 @@
+/*---------------------- Navbar ----------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", sans-serif;
+}
+
+.header {
+  height: 80px;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.logo {
+  line-height: 80px;
+  float: left;
+  text-transform: uppercase;
+}
+
+.logo:hover{
+  cursor: pointer;
+  color: #333;
+  transition: 0.4s;
+}
+
+.menu {
+  float: right;
+  line-height: 80px;
+}
+
+.menu a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.show-menu-btn,.hide-menu-btn {
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.show-menu-btn {
+  float: right;
+}
+
+.show-menu-btn i {
+  line-height: 100px;
+}
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover {
+  color: #333;
+  font-weight: bold;
+}
+
+#chk {
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+@media screen and (max-width:800px) {
+  .show-menu-btn,.hide-menu-btn{
+    display: block;
+  }
+
+  .menu{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+  }
+
+  .menu a{
+    display: block;
+    padding: 20px;
+  }
+
+  .menu a:hover,
+  .hide-menu-btn:hover{
+    color: #6a89cc;
+  }
+
+  .hide-menu-btn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  #chk:checked ~ .menu{
+    right: 0;
+  }
+}
+
+/*---------------------- Contact Form --------------*/
+.modal-bg h1{
+  padding-top: 30px;
+  text-align: center;
+  color: #ddd;
+}
+
+.border{
+  width: 100px;
+  height: 10px;
+  background: #34495e;
+  margin: 20px auto;
+}
+
+.contact-form{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.contact-form-text{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 40px;
+  outline: none;
+  color: #ddd;
+  transition: 0.5s;
+}
+
+.contact-form-text:hover{
+  box-shadow: 0px 5px 15px #0a3d62;
+}
+
+textarea.contact-form-text{
+  height: 120px;
+  resize: none;
+}
+
+.contact-form-btn{
+  float: right;
+  border: 3px solid #0a3d62;
+  background: none;
+  padding: 12px 50px;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+
+.contact-form-btn:hover{
+  border-color: #0a3d62;
+  background: #0a3d62;
+  cursor: pointer;
+  color: white;
+}
+
+.modal-close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close:hover{
+  color: #6a89cc;
+  transition: 0.3s;
+}
+
+
+/*-------------*/
+.modal-bg{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active{
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal{
+  position: relative;
+  background: linear-gradient(125deg, #6a89cc, #78e08f);
+  width: 50%;
+  border-radius: 10PX;
+}
+
+/*----------------Select nbr-sentence --------------*/
+.NBRsentence {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.NBRsentence table{
+  margin: auto;
+}
+
+#nbr-sentence {
+  width: 40px;
+}
+
+
+/*---------------------- Corp ----------------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(125deg, #6a89cc, #78e08f);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px ;
+}
+
+.text-generated {
+  max-width: 80%;
+  width: 800px;
+  min-height: 50px;
+  margin: auto;
+  padding: 20px;
+  text-align: justify-content;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+input {
+  border: 0;
+  background: none;
+  display: block;
+  width: 250px;
+  margin: 50px auto;
+  text-align: center;
+  border: 3px solid #0a3d62;
+  padding: 14px 10px;
+  border-radius: 24px;
+  outline: none;
+  transition: 0.25s;
+  font-size: 15px;
+}
+
+.btn-principal:hover {
+  border-color: #0a3d62;
+  cursor: pointer;
+  background: #0a3d62;
+  color: #fff;
+}
+
+.container-btn {
+  max-width: 800px;
+  margin-bottom: -20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-table {
+  margin: auto;
+  padding: 20px;
+  flex: 1;
+}
+
+.list-select {
+  margin: 8px 0;
+  font-size: 18px;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+select:hover {
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+select {
+  width: 210px;
+}

@@ -1,0 +1,168 @@
+<!DOCTOTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Citation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body>
+    <!-- ..................... Navbar ..................... -->
+    <div class="header">
+      <h2 class="logo">Generate</h2>
+      <input type="checkbox" id="chk">
+      <label for="chk" class="show-menu-btn">
+        <i class="fas fa-ellipsis-h"></i>
+      </label>
+
+      <ul class="menu">
+        <a href="index.html">Accueil</a>
+        <a id="contact-btn">Contact</a>
+        <label for="chk" class="hide-menu-btn">
+          <i class="fas fa-times"></i>
+        </label>
+      </ul>
+    </div>
+
+    <!--...................... Contact form ..............-->
+    <div class="modal-bg">
+      <div class="modal">
+        <h1>Contact Us</h1>
+        <span class="modal-close">X</span>
+        <div class="border"></div>
+
+        <form class="contact-form" action="index.html" method="post">
+          <input type="text" class="contact-form-text" placeholder="Votre nom">
+          <input type="email" class="contact-form-text" placeholder="Votre e-mail">
+          <input type="text" class="contact-form-text" placeholder="Votre numéro">
+          <textarea class="contact-form-text" placeholder="Votre message"></textarea>
+          <input type="submit" class="contact-form-btn" value="Envoyer">
+        </form>
+      </div>
+    </div>
+
+    <!-- ..................... Corp ..................... -->
+    <h1>Genérateur de citation</h1>
+
+    <div class="text-generated">
+      <p id="sentencePrint">Veuillez selectionner un theme.</p>
+    </div>
+
+    <div class="container-btn">
+      <input type="button" class="btn-principal" id="btn-generale" value="Theme genérale" onclick="setValueInSelectBox('Generale');">
+      <input type="button" class="btn-principal" id="btn-random" value="Générer au hasard une phrase." onclick="generateRandom();">
+      <input type="button" class="btn-principal" id="btn-scolaire" value="Theme scolaire" onclick="setValueInSelectBox('Scolaire');">
+    </div>
+
+    <div class="container, NBRsentence">
+      <table>
+        <tr>
+          <td>Nombre de phrase : <select id="nbr-sentence">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </tr>
+      </table>
+    </div>
+
+    <div class="container" id="listT">
+      <div class="list-table table1">
+        <table>
+            <tr>
+              <td><select id="list1" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table2">
+        <table>
+            <tr>
+              <td><select id="list2" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table3">
+        <table>
+            <tr>
+              <td><select id="list3" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table4">
+        <table>
+            <tr>
+              <td><select id="list4" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table5">
+        <table>
+            <tr>
+              <td><select id="list5" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table6">
+        <table>
+            <tr>
+              <td><select id="list6" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table7">
+        <table>
+            <tr>
+              <td><select id="list7" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table8">
+        <table>
+            <tr>
+              <td><select id="list8" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+      <div class="list-table table9">
+        <table>
+            <tr>
+              <td><select id="list9" name="list9" size="5" class="list-select" onchange="generateSentence();">
+
+              </select></td>
+            </tr>
+        </table>
+      </div>
+
+    </div>
+
+  </body>
+</html>
