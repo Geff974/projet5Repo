@@ -101,7 +101,6 @@ const generateRandom = () => {
     document.getElementById('sentencePrint').innerHTML = multiSentence;
 }
 
-/* ---------------modal visibility ---------------*/
 onload = function showModal () {
     let modalBtn = document.getElementById('contact-btn');
     let modalClose = document.querySelector('.modal-close');
