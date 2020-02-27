@@ -77,7 +77,10 @@ const selectRandom = (nbr) => {
 }
 
 const generateRandom = () => {
-    if (document.getElementById('list1').options.length == 0) {
+    if (document.getElementById('list1').options.length == 0 ||
+    !document.getElementById('btn-generale').classList.contains('theme-active') &&
+    !document.getElementById('btn-scolaire').classList.contains('theme-active'))
+    {
         document.getElementById('sentencePrint').innerHTML = "Veuillez selectionner un theme avant de générer une phrase aléatoirement.";
         return 0;
     }
