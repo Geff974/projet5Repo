@@ -32,54 +32,46 @@ const setValueInSelectBox = (theme) => {
     
 
     const tabs = {
-        tabValue1 : [],
-        tabValue2 : [],
-        tabValue3 : [],
-        tabValue4 : [],
-        tabValue5 : [],
-        tabValue6 : [],
-        tabValue7 : [],
-        tabValue8 : [],
-        tabValue9 : []
     };
 
-    if (theme === "Generale") {
-        tabs.tabValue1.push('Avec', 'Considérant', 'Vu', 'Malgré', 'Tant que durera');
-        tabs.tabValue2.push('la crise', 'cette rigueur', 'la situation', 'la politique', 'complexité');
-        tabs.tabValue3.push('actuel', 'induite', 'contextuelle', 'observé', 'conjoncturelle');
-        tabs.tabValue4.push('il convient d#', 'il est préférable d#','il est nécessaire d#', 'il serait bon d#', 'je recommande d#');
-        tabs.tabValue5.push('prendre en compte', 'uniformiser', 'avoir à l\'esprit', 'considérer', 'se remémorer');
-        tabs.tabValue6.push('certaine', 'la simultanéité des', 'la majorité des', 'la globalité des', 'les principales');
-        tabs.tabValue7.push('actions', 'améliorations', 'options', 'modalités', 'hypothèses');
-        tabs.tabValue8.push('s\'offrant à nous', 'de bon sens', 'envisageables', 'réalisable', 'déclinable');
-        tabs.tabValue9.push('depuis longtemps.', 'rapidement.', 'pour le future.', 'à l\'avenir.', 'trés attentivement.');
+    switch (theme) {
+        case 'Scolaire':
+            tabs.tabValue1 = ['Considérant', 'Tant que durera', 'Avec', 'Analysant', 'Malgré'];
+            tabs.tabValue2 = ['la récréation', 'ce probleme', 'la pause déjeuné', 'la nouvelle réforme', 'la dificulté'];
+            tabs.tabValue3 = ['le proviseur', 'la classe', 'le professeur', 'le CPE', 'l\'élève'];
+            tabs.tabValue4 = ['parle de', 'fait','pense à', 'réfléchi à', 'n\'a pas vue'];
+            tabs.tabValue5 = ['la leçon', 'l\'évaluation', 'la responsabilité', 'la popularité', 'la réussite'];
+            tabs.tabValue6 = ['du personnel', 'des adolescant', 'de l\'établissement', 'du conseil de classe', 'du délégué'];
+            tabs.tabValue7 = ['ainsi qu#', 'bien qu#', 'alors qu#', 'malgré qu#', 'et pas uniquement qu#'];
+            tabs.tabValue8 = ['une pédagogie pour', 'un apprentissage pour', 'il est possible de', 'on pourrait', 'une progression pour'];
+            tabs.tabValue9 = ['réussir.', 'se concerter.', 'travailler ensemble.', 'surmonter l\'echec.', 'trouver des solutions.'];
+            break;
+        default:
+            tabs.tabValue1 = ['Avec', 'Considérant', 'Vu', 'Malgré', 'Tant que durera'];
+            tabs.tabValue2 = ['la crise', 'cette rigueur', 'la situation', 'la politique', 'complexité'];
+            tabs.tabValue3 = ['actuel', 'induite', 'contextuelle', 'observé', 'conjoncturelle'];
+            tabs.tabValue4 = ['il convient d#', 'il est préférable d#','il est nécessaire d#', 'il serait bon d#', 'je recommande d#'];
+            tabs.tabValue5 = ['prendre en compte', 'uniformiser', 'avoir à l\'esprit', 'considérer', 'se remémorer'];
+            tabs.tabValue6 = ['certaine', 'la simultanéité des', 'la majorité des', 'la globalité des', 'les principales'];
+            tabs.tabValue7 = ['actions', 'améliorations', 'options', 'modalités', 'hypothèses'];
+            tabs.tabValue8 = ['s\'offrant à nous', 'de bon sens', 'envisageables', 'réalisable', 'déclinable'];
+            tabs.tabValue9 = ['depuis longtemps.', 'rapidement.', 'pour le future.', 'à l\'avenir.', 'trés attentivement.'];
     }
-
-    if (theme === "Scolaire") {
-        tabs.tabValue1.push('Considérant', 'Tant que durera', 'Avec', 'Analysant', 'Malgré');
-        tabs.tabValue2.push('la récréation', 'ce probleme', 'la pause déjeuné', 'la nouvelle réforme', 'la dificulté');
-        tabs.tabValue3.push('le proviseur', 'la classe', 'le professeur', 'le CPE', 'l\'élève');
-        tabs.tabValue4.push('parle de', 'fait','pense à', 'réfléchi à', 'n\'a pas vue');
-        tabs.tabValue5.push('la leçon', 'l\'évaluation', 'la responsabilité', 'la popularité', 'la réussite');
-        tabs.tabValue6.push('du personnel', 'des adolescant', 'de l\'établissement', 'du conseil de classe', 'du délégué');
-        tabs.tabValue7.push('ainsi qu#', 'bien qu#', 'alors qu#', 'malgré qu#', 'et pas uniquement qu#');
-        tabs.tabValue8.push('une pédagogie pour', 'un apprentissage pour', 'il est possible de', 'on pourrait', 'une progression pour');
-        tabs.tabValue9.push('réussir.', 'se concerter.', 'travailler ensemble.', 'surmonter l\'echec.', 'trouver des solutions.');
-    }
-
 
     let i = 1;
     for (const tab in tabs) {
         setValueTab(tabs[tab], 'list'+i);
         i++;
     }
+    
+    document.getElementById('listT').classList.replace('hide-table', 'show-table');
 
     document.getElementById('sentencePrint').innerHTML = "Cliquez sur le bouton pour une composition automatique, ou composez manuellement votre phrase en choisissant dans les listes ci-dessous."
 }
 
-const selectRandom = () => {
+const selectRandom = (nbr) => {
     for (let j=1 ; j<10 ; j++) {
-        let numberRandom = Math.floor(Math.random() * 5);
+        let numberRandom = Math.floor(Math.random() * nbr);
         document.getElementById('list'+j).selectedIndex = numberRandom;
     }
 }
@@ -92,13 +84,28 @@ const generateRandom = () => {
 
     let multiSentence = "";
     const nbrSentence = document.getElementById('nbr-sentence').value;
+    let nbrOptionList = "";
     for (let i=0 ; i<nbrSentence ; i++) {
-        selectRandom();
+        nbrOptionList = document.getElementById('list'+(i+1)).options.length;
+        selectRandom(nbrOptionList);
         generateSentence();
         multiSentence += document.getElementById('sentencePrint').innerHTML + "<BR/>";
     }
 
     document.getElementById('sentencePrint').innerHTML = multiSentence;
+}
+
+const themeActive = (thActive, thDesactive) => {
+    const firstBtn = document.getElementById(thActive);
+    const secBtn = document.getElementById(thDesactive)
+
+    if (firstBtn.classList.toggle('theme-active')) {
+        if (secBtn.classList.contains('theme-active')) {
+            secBtn.classList.remove('theme-active')
+        }
+    } else {
+        document.getElementById('listT').classList.replace('show-table', 'hide-table');
+    }
 }
 
 onload = function showModal () {

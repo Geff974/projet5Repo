@@ -52,9 +52,9 @@
     </div>
 
     <div class="container-btn">
-      <input type="button" class="btn-principal" id="btn-generale" value="Theme genérale" onclick="setValueInSelectBox('Generale');">
+      <input type="button" class="btn-principal" id="btn-generale" value="Theme genérale" onclick="setValueInSelectBox('Generale'); themeActive('btn-generale', 'btn-scolaire');">
       <input type="button" class="btn-principal" id="btn-random" value="Générer au hasard une phrase." onclick="generateRandom();">
-      <input type="button" class="btn-principal" id="btn-scolaire" value="Theme scolaire" onclick="setValueInSelectBox('Scolaire');">
+      <input type="button" class="btn-principal" id="btn-scolaire" value="Theme scolaire" onclick="setValueInSelectBox('Scolaire'); themeActive('btn-scolaire', 'btn-generale');">
     </div>
 
     <div class="container, NBRsentence">
@@ -71,7 +71,7 @@
       </table>
     </div>
 
-    <div class="container" id="listT">
+    <div class="container hide-table" id="listT">
       <div class="list-table table1">
         <table>
             <tr>
