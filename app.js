@@ -108,6 +108,7 @@ const themeActive = (thActive, thDesactive) => {
         }
     } else {
         document.getElementById('listT').classList.replace('show-table', 'hide-table');
+        document.getElementById('sentencePrint').innerHTML = "Veuillez selectionner un theme.";
     }
 }
 
