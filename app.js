@@ -69,11 +69,9 @@ const setValueInSelectBox = (theme) => {
     document.getElementById('sentencePrint').innerHTML = "Cliquez sur le bouton pour une composition automatique, ou composez manuellement votre phrase en choisissant dans les listes ci-dessous."
 }
 
-const selectRandom = (nbr) => {
-    for (let j=1 ; j<10 ; j++) {
-        let numberRandom = Math.floor(Math.random() * nbr);
-        document.getElementById('list'+j).selectedIndex = numberRandom;
-    }
+const selectRandom = (nbr, tab) => {
+    let numberRandom = Math.floor(Math.random() * nbr);
+    document.getElementById(tab).selectedIndex = numberRandom;
 }
 
 const generateRandom = () => {
@@ -87,10 +85,13 @@ const generateRandom = () => {
 
     let multiSentence = "";
     const nbrSentence = document.getElementById('nbr-sentence').value;
-    let nbrOptionList = "";
+    let nbrElementList = "";
     for (let i=0 ; i<nbrSentence ; i++) {
-        nbrOptionList = document.getElementById('list'+(i+1)).options.length;
-        selectRandom(nbrOptionList);
+        for (let j=1; j<10; j++) {
+            nbrElementList = document.getElementById('list'+j)
+            selectRandom(nbrElementList.length, 'list'+j);
+        }
+
         generateSentence();
         multiSentence += document.getElementById('sentencePrint').innerHTML + "<BR/>";
     }
